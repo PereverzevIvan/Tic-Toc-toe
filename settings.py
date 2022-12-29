@@ -1,7 +1,8 @@
-from pygame import mixer
+from pygame import mixer, cursors
+from pygame.locals import *
 mixer.pre_init(44100, -16, 1, 512)
 mixer.init()
-mixer.music.set_volume(0)
+mixer.music.set_volume(1)
 
 FPS = 30
 CELL_SIZE = 150
@@ -21,3 +22,6 @@ SWORD_1.set_volume(0.5)
 SWORD_2.set_volume(0.5)
 SHIELD.set_volume(0.5)
 CLICK.set_volume(0.2)
+
+NORM_CURSOR = cursors.Cursor(SYSTEM_CURSOR_ARROW)
+FINGER_CURSOR = cursors.Cursor(SYSTEM_CURSOR_HAND)
