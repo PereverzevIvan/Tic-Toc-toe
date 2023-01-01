@@ -8,6 +8,7 @@ def get_computer_char(user_char):
 
 
 class Field:
+    """ Класс игрового поля """
     def __init__(self, rows: int, cols: int, x: int, y: int, screen: surface.Surface):
         self.screen = screen
         self.rect = rect.Rect(x, y, CELL_SIZE * rows, CELL_SIZE * cols)
@@ -70,6 +71,7 @@ class Field:
 
 
 class Cell:
+    """ Класс отдельной клетки игрового поля """
     def __init__(self, x: int, y: int, screen: surface.Surface):
         self.x = x
         self.y = y
@@ -119,6 +121,7 @@ class Cell:
 
 
 class Counter:
+    """ Класс счетчика побед, поражений и ничей """
     def __init__(self, x: int, y: int, w: int, h: int, screen: surface.Surface):
         self.rect = rect.Rect(x, y, w, h)
         self.screen = screen
@@ -190,6 +193,7 @@ class Counter:
 
 
 class RulePlace:
+    """ Класс области с правилами игры """
     def __init__(self, x: int, y: int, w: int, h: int, screen: surface.Surface):
         self.rect = rect.Rect(x, y, w, h)
         self.screen = screen

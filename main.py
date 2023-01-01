@@ -17,6 +17,7 @@ def play_symbol_sound(symbol):
 
 
 class Game:
+    """ Класс игры в целом """
     def __init__(self):
         self.window = display.set_mode([WIDTH, HEIGHT])
         display.set_caption("Крестики и нолики")
@@ -33,6 +34,7 @@ class Game:
 
 
 class GameScreen(Game):
+    """ Класс игрового экрана """
     def __init__(self, hu_char: str, ai_char: str):
         super(GameScreen, self).__init__()
         self.field = Field(3, 3, 300, 55, self.screen)
@@ -140,6 +142,8 @@ class GameScreen(Game):
                         self.attenuation()
                         exit_()
                     if self.btn_return.check_press(mouse_pos):
+                        if not self.was_win:
+                            self.counter.update_counters('computer')
                         run = False
                         self.want_back = True
                     if not self.was_win:
@@ -230,6 +234,7 @@ class GameScreen(Game):
 
 
 class StartScreen(Game):
+    """ Главного экрана """
     def __init__(self):
         super(StartScreen, self).__init__()
         self.header = Label(0, 0, 65, "Крестики и нолики", self.screen)

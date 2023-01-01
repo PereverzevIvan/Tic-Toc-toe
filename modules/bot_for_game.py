@@ -6,6 +6,7 @@ HU_TURN = False
 
 
 class Bot:
+    """ Класс искусственного интеллекта """
     def __init__(self, hu_char, ai_char):
         self.hu_char = hu_char
         self.ai_char = ai_char

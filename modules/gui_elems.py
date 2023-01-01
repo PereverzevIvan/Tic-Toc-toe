@@ -3,6 +3,7 @@ from settings import CLICK
 
 
 class RadioButton:
+    """ Класс графического элемента 'Радиокнопка' """
     def __init__(self, x: int, y: int, font_size: int, radius: int, text: str, screen: surface.Surface):
         self.rect = rect.Rect(x, y, radius*2, radius*2)
         self.font = font.Font('src/fonts/centurygothic_bold.ttf', font_size)
@@ -34,6 +35,7 @@ class RadioButton:
 
 
 class Label:
+    """ Класс графического элемента 'Надпись' """
     def __init__(self, x: int, y: int, font_size: int, text: str, screen: surface.Surface):
         self.font = font.Font('src/fonts/centurygothic_bold.ttf', font_size)
         self.screen = screen
@@ -49,6 +51,7 @@ class Label:
 
 
 class Button:
+    """ Класс графического элемента 'Кнопка' """
     def __init__(self, x: int, y: int, w: int, h: int, font_size: int, text: str, screen: surface.Surface):
         self.rect = rect.Rect(x, y, w, h)
         self.screen = screen
